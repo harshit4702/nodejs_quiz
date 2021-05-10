@@ -1,0 +1,28 @@
+<%- include('header.ejs') %>
+<body>
+    <form id = 'show-form' action="/admincreate">
+        <button id="post-btn">Create</button><br>
+    </form>
+    <form action="/logout" >
+        <button class="btn btn-danger">Logout</button>
+    </form>
+        
+        <h1> Quiz Question</h1>
+        <ol>
+            <% for(var i = 0; i < ques.length; i++) { %>
+                <li>
+                    <p><%- ques[i].question %></p>
+                    <form action="/adminedit/<%- ques[i]._id %>">
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </form>
+
+                    <a href="#" data-toggle="modal" class="btn btn-primary" data-target="#exampleModal<%- i %>" >Delete</a>
+
+                </li>   
+                <%- include('deleteModal.ejs',{link: `admin/delete/${ques[i]._id}`, Sno: i  }) %> 
+
+            <% } %>
+        </ol>
+
+    <script src="quiz.js"></script>
+</body>

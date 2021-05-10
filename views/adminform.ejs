@@ -1,0 +1,58 @@
+<%- include('header.ejs') %>
+
+<body>
+    <form id = 'quiz-form-<%- type %>'  action="<%- link %>" enctype="application/x-www-form-urlencoded">
+        <p>Add question</p>
+        <div class="ques">
+            <label>Question: &nbsp;</label>
+            <br/>
+            <input type="text" id="question" name="question" placeholder="Enter your question" value="<%- question %>">
+            <br><br>
+            
+            <label> &nbsp;Option1:&nbsp;
+            </label>
+            <input type="text" id="option1" name="option1" placeholder="Enter your option-1" value="<%- options.A %>" >
+            <%if (answer == "A") { %>
+                <input type="radio" id="answer" name="answer" value="A" checked>
+            <% } else { %>
+                <input type="radio" id="answer" name="answer" value="A">
+            <% } %>
+
+            <br><br>
+            <label> &nbsp; &nbsp;Option2: &nbsp;</label>
+            <input type="text" id="option2" name="option2" placeholder="Enter your option-2" value="<%- options.B %>">
+            <%if (answer == "B") { %>
+                <input type="radio" id="answer" name="answer" value="B" checked>
+            <% } else { %>
+                <input type="radio" id="answer" name="answer" value="B">
+            <% } %>
+            
+            <br><br> 
+            <label> &nbsp; &nbsp;Option3: &nbsp;</label>
+            <input type="text" id="option3" name="option3" placeholder="Enter your option-3" value="<%- options.C %>">
+            <%if (answer == "C") { %>
+                <input type="radio" id="answer" name="answer" value="C" checked>
+            <% } else { %>
+                <input type="radio" id="answer" name="answer" value="C">
+            <% } %>
+
+            <br> <br>  
+            <label> &nbsp; &nbsp;Option4: &nbsp;</label>
+            <input type="text" id="option4" name="option4" placeholder="Enter your option-4" value="<%- options.D %>">
+            <%if (answer == "D") { %>
+                <input type="radio" id="answer" name="answer" value="D" checked>
+            <% } else { %>
+                <input type="radio" id="answer" name="answer" value="D">
+            <% } %>            
+        </div>
+            <input type="submit" value="submit">
+        </div>
+
+    </form>
+    <script >
+        var link = "<%- link %>" ; 
+    </script>
+    <script src= "<%- script %>" ></script>
+</body> 
+
+</html>

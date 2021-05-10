@@ -1,0 +1,33 @@
+<%- include('header.ejs') %>
+<body>
+   
+    <form id = 'submit-form'  >
+        <h1> Quiz Questions</h1>
+
+        <div >
+            <label for="name">Name</label>
+            <input type="text" placeholder="name" id="name" name="name">
+        </div>
+
+        <ol>
+            <% for(var i=0; i < ques.length; i++) { %>
+                <li><p><%- ques[i].question %></p>
+                    <label><input type="radio" id="answer<%- i %>" name="answer<%- i %>" value="A"> <%=  ques[i].options.A %></label><br>
+                    <label><input type="radio" id="answer<%- i %>" name="answer<%- i %>" value="B"> <%=  ques[i].options.B %></label><br>
+                    <label><input type="radio" id="answer<%- i %>" name="answer<%- i %>" value="C"> <%=  ques[i].options.C %></label><br>
+                    <label><input type="radio" id="answer<%- i %>" name="answer<%- i %>" value="D"> <%=  ques[i].options.D %></label><br>
+                </li>
+            <% } %>
+        </ol>
+
+        </div>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+
+    <script>
+        var ques = <%- JSON.stringify(ques) %>    
+    </script>
+
+    <script src="quiz.js"></script>
+</body>

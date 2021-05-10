@@ -1,0 +1,4 @@
+{
+    "jwtPrivateKey": "quiz_jwtPrivateKey",
+    "db": "mongodb://localhost/quiz"
+}
